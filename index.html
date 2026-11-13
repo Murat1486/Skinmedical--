@@ -5,7 +5,9 @@ html
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SkinMedical | Медицина кожи в Сургуте</title>
+    
     <style>
+        /* --- БАЗОВЫЕ НАСТРОЙКИ И ЦВЕТА --- */
         :root {
             --bg-dark: #011a14;
             --bg-mid: #047857;
@@ -47,6 +49,7 @@ html
             transform: translateY(40px);
             animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
+        
         .delay-1 { animation-delay: 0.1s; }
         .delay-2 { animation-delay: 0.3s; }
         .delay-3 { animation-delay: 0.5s; }
@@ -87,6 +90,7 @@ html
             cursor: pointer;
             transition: transform 0.2s;
         }
+
         nav button:active { transform: scale(0.95); }
 
         /* --- ГЛАВНЫЙ ЭКРАН --- */
@@ -275,6 +279,7 @@ html
             box-shadow: 0 0 25px rgba(255,255,255,0.4);
             transition: transform 0.2s;
         }
+
         .btn-review:active { transform: scale(0.95); }
 
         /* --- КОНТАКТЫ --- */
@@ -389,7 +394,6 @@ html
     </footer>
 
     <script>
-        // --- ГЕНЕРАТОР ОТЗЫВОВ ---
         const openings = [
             "Шла на чистку с опаской, кожа капризная", "Ходил на лазер, думал будет жесть", "Пришла к дерматологу с сыпью, замучилась", "Пилинг спины это спасение", "Иглоукалывание это что-то",
             "Сделала биоревитализацию, кожа была как пергамент", "Привела маму к косметологу, ей 60", "Удалял папиллому на шее", "Ходила на трихолога, волосы лезли клочьями", "Пошла на пилинг, хотела убрать пятна",
@@ -446,7 +450,6 @@ html
             });
         }
 
-        // --- АНИМАЦИЯ ПРИ СКРОЛЛЕ ---
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
