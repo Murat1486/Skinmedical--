@@ -1,4 +1,3 @@
-html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -225,19 +224,26 @@ html
             border-radius: 24px;
             padding: 30px 20px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .doctor-photo {
+        /* Стильная заглушка вместо фото */
+        .doctor-avatar {
             width: 100px;
             height: 100px;
-            background: rgba(255,255,255,0.9);
+            background: linear-gradient(135deg, #ffffff, #d1fae5);
             border-radius: 50%;
             margin: 0 auto 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 50px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--bg-dark);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: 3px solid rgba(255,255,255,0.5);
         }
 
         .doctor-card h3 {
@@ -290,8 +296,15 @@ html
 
         .contact-section p {
             font-size: 18px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             opacity: 0.9;
+        }
+        
+        .address {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 30px;
+            display: block;
         }
 
         /* --- ПОДВАЛ --- */
@@ -358,19 +371,34 @@ html
         <h2 class="section-title fade-up">Наши специалисты</h2>
         <div class="doctors-grid">
             <div class="doctor-card fade-up delay-1">
-                <div class="doctor-photo">👩‍⚕️</div>
-                <h3>Иванова Анна</h3>
+                <div class="doctor-avatar">КМ</div>
+                <h3>Казакова Марина</h3>
                 <p>Дерматолог, косметолог</p>
             </div>
             <div class="doctor-card fade-up delay-2">
-                <div class="doctor-photo">👨‍⚕️</div>
-                <h3>Петров Сергей</h3>
-                <p>Хирург</p>
+                <div class="doctor-avatar">ГИ</div>
+                <h3>Гизатуллина Ирина</h3>
+                <p>Невролог, косметолог</p>
             </div>
             <div class="doctor-card fade-up delay-3">
-                <div class="doctor-photo">👩‍⚕️</div>
-                <h3>Сидорова Елена</h3>
-                <p>Трихолог</p>
+                <div class="doctor-avatar">ВС</div>
+                <h3>Валентиенко Сильвия</h3>
+                <p>Дерматолог</p>
+            </div>
+            <div class="doctor-card fade-up delay-4">
+                <div class="doctor-avatar">ТС</div>
+                <h3>Таслицкий Станислав</h3>
+                <p>Хирург</p>
+            </div>
+            <div class="doctor-card fade-up delay-1">
+                <div class="doctor-avatar">МЕ</div>
+                <h3>Михеева Екатерина</h3>
+                <p>Трихолог, косметолог</p>
+            </div>
+            <div class="doctor-card fade-up delay-2">
+                <div class="doctor-avatar">КЮ</div>
+                <h3>Коновалова Юлия</h3>
+                <p>Дерматолог, косметолог</p>
             </div>
         </div>
     </section>
@@ -385,8 +413,9 @@ html
 
     <section id="contact" class="section contact-section">
         <h2 class="section-title fade-up">Записаться на прием</h2>
-        <p class="fade-up delay-1">Позвоните нам или напишите в мессенджер:</p>
-        <a href="tel:+70000000000" class="btn-primary fade-up delay-2">Позвонить</a>
+        <p class="fade-up delay-1">Позвоните нам для записи:</p>
+        <span class="address fade-up delay-2">г. Сургут, ул. 30 лет Победы, 62</span>
+        <a href="tel:+79990000000" class="btn-primary fade-up delay-3">Позвонить</a>
     </section>
 
     <footer>
@@ -394,6 +423,7 @@ html
     </footer>
 
     <script>
+        // --- ГЕНЕРАТОР ОТЗЫВОВ ---
         const openings = [
             "Шла на чистку с опаской, кожа капризная", "Ходил на лазер, думал будет жесть", "Пришла к дерматологу с сыпью, замучилась", "Пилинг спины это спасение", "Иглоукалывание это что-то",
             "Сделала биоревитализацию, кожа была как пергамент", "Привела маму к косметологу, ей 60", "Удалял папиллому на шее", "Ходила на трихолога, волосы лезли клочьями", "Пошла на пилинг, хотела убрать пятна",
@@ -450,6 +480,7 @@ html
             });
         }
 
+        // --- АНИМАЦИЯ ПРИ СКРОЛЛЕ ---
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
